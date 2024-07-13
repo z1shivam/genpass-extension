@@ -13,12 +13,8 @@ The magic of GenPass is now available as a Chrome Extension! Generate strong and
 
 ## Usage
 
-1. **Install the Extension**:
-   - Since the extension is in development and not yet available on the Chrome Web Store, you can load it as an unpacked extension.
-   - Download or clone the extension code from the repository.
-   - Open Chrome and go to `chrome://extensions/`.
-   - Enable "Developer mode" in the top right corner.
-   - Click "Load unpacked" and select the extension directory.
+1. **Build The Extension**:
+   - Since the extension is in development and not yet available on the Chrome Web Store, you can build it by yourself to try it.
 
 2. **Generate Passphrases**:
    - Click on the GenPass extension icon.
@@ -26,11 +22,6 @@ The magic of GenPass is now available as a Chrome Extension! Generate strong and
    - Select options for numbers, uppercase letters, and special characters.
    - If needed, choose the hyphen option for space conversion.
    - Click the "Generate Passphrase" button to get a secure passphrase.
-
-3. **Random Passwords**:
-   - Need a random password instead? GenPass has got you covered!
-   - Select options for numbers, uppercase letters, and special characters.
-   - Generate a secure random password based on your preferences.
 
 ## Contribution
 
