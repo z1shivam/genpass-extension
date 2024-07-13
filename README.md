@@ -35,6 +35,7 @@ The magic of GenPass is now available as a Chrome Extension! Generate strong and
    - This project is written in `TypeScript` and `HTML5`.
    - Uses `vite` as build tool.
    - `tailwindCSS` for styling.
+   - uses public directory for all the static stuffs including `manifest.json`.
      
 ## Contribution
 
