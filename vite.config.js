@@ -1,5 +1,5 @@
 export default{
   build:{
-    outDir: 'extension'
+    outDir: 'genpass-extension'
   }
 }
