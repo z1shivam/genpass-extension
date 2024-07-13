@@ -3,6 +3,51 @@
   src: url('/Oxygen-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Ubuntu mono';
+  src: url('/UbuntuMono-Regular.ttf') format('mono');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{
+  -webkit-tap-highlight-color: transparent;
+}
+
+.transform{
+  transform: scaleX(-1);
+}
+
+
+.toggle-path {
+  transition: background 0.3s ease-in-out;
+}
+.toggle-circle {
+  top: 0.2rem;
+  left: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+input:checked ~ .toggle-circle {
+  transform: translateX(100%);
+}
+input:checked ~ .toggle-path {
+  background-color:rgb(169, 129, 230);
+}
+
+
+.plus {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.ubuntu-mono-regular {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
