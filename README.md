@@ -14,7 +14,15 @@ The magic of GenPass is now available as a Chrome Extension! Generate strong and
 ## Usage
 
 1. **Build The Extension**:
-   - Since the extension is in development and not yet available on the Chrome Web Store, you can build it by yourself to try it.
+   - Since this extension is under development and not on the Chrome Web Store, you need to build it yourself.
+   - Ensure you have `nodejs` and `git` installed on your system.
+   - Clone the repository with `git clone https://github.com/z1shivam/genpass-extension.git` and navigate to the project directory: `cd genpass-extension`.
+   - Install the necessary dependencies using either `npm install` or `pnpm install`.
+   - Run `pnpm build` to generate a `genpass-extension` folder in the project's root directory.
+   - This folder can be loaded directly into Chrome, independent of the project files. You may delete the project files after copying the `genpass-extension` folder.
+   - Open Chrome and go to the Extensions page. Enable Developer mode via the sidebar.
+   - Click "Load unpacked" and select the `genpass-extension` folder. The extension will now appear in the list.
+   - Enable the extension and pin it to the top bar for easy access. You can use it anytime by clicking the icon in the top bar.
 
 2. **Generate Passphrases**:
    - Click on the GenPass extension icon.
@@ -23,6 +31,11 @@ The magic of GenPass is now available as a Chrome Extension! Generate strong and
    - If needed, choose the hyphen option for space conversion.
    - Click the "Generate Passphrase" button to get a secure passphrase.
 
+3. **Developement Information**:
+   - This project is written in `TypeScript` and `HTML5`.
+   - Uses `vite` as build tool.
+   - `tailwindCSS` for styling.
+     
 ## Contribution
 
 - 🤝 Contributions are welcome! Feel free to open issues and pull requests.
