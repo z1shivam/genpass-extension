@@ -8,6 +8,7 @@ type Settings = {
   changeSeparator: boolean;
 };
 
+
 const settings: Settings = {
   numOfWords: 3,
   includeNumbers: false,
