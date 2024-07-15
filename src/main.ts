@@ -87,7 +87,7 @@ const generatePassphrase = () => {
     if (i === capitalizeIndex) word = word.charAt(0).toUpperCase() + word.slice(1);
     if (i === numPlace) word += numbers[secureRandom(numbers.length)];
     if (i === charPlace) word = specialChars[secureRandom(specialChars.length)] + word;
-    (i===numOfWords)?(passphrase+=word):(passphrase += word + separator)
+    i === numOfWords ? (passphrase += word) : (passphrase += word + separator);
   }
   
   gid("passphraseContainer")!.innerText = passphrase.trim();
