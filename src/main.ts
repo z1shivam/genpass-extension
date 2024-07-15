@@ -82,12 +82,12 @@ const generatePassphrase = () => {
   const charPlace = includeSpecialChars ? secureRandom(numOfWords) : -1;
   const capitalizeIndex = capitalize ? secureRandom(numOfWords) : -1;
   
-  for (let i = 0; i < numOfWords; i++) {
+  for (let i = 1; i <= numOfWords; i++) {
     let word = words[secureRandom(words.length)];
     if (i === capitalizeIndex) word = word.charAt(0).toUpperCase() + word.slice(1);
     if (i === numPlace) word += numbers[secureRandom(numbers.length)];
     if (i === charPlace) word = specialChars[secureRandom(specialChars.length)] + word;
-    passphrase += word + separator;
+    (i===numOfWords)?(passphrase+=word):(passphrase += word + separator)
   }
   
   gid("passphraseContainer")!.innerText = passphrase.trim();
