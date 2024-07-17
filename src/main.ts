@@ -8,7 +8,6 @@ type Settings = {
   changeSeparator: boolean;
 };
 
-
 const settings: Settings = {
   numOfWords: 3,
   includeNumbers: false,
@@ -25,11 +24,14 @@ const handleWordButtonClick = (numWords: number, buttonId: string) => {
     gid(id)?.classList.remove("bg-purple-200", "rounded-l-sm", "rounded-r-sm");
     gid(id)?.classList.add("border-l");
   });
-  gid(buttonId)?.classList.add("bg-purple-200", buttonId.includes("three") ? "rounded-l-sm" : "rounded-r-sm");
+  gid(buttonId)?.classList.add(
+    "bg-purple-200",
+    buttonId.includes("three") ? "rounded-l-sm" : "rounded-r-sm"
+  );
   generatePassphrase();
 };
 
-const toggleBooleanSetting = (setting: keyof Omit<Settings, 'numOfWords'>) => {
+const toggleBooleanSetting = (setting: keyof Omit<Settings, "numOfWords">) => {
   settings[setting] = !settings[setting];
   generatePassphrase();
 };
@@ -43,9 +45,10 @@ gid("inclChar")?.addEventListener("change", () => toggleBooleanSetting("includeS
 gid("chngSep")?.addEventListener("change", () => toggleBooleanSetting("changeSeparator"));
 
 gid("copyPassphrase")?.addEventListener("click", () => {
-  navigator.clipboard.writeText(gid("passphraseContainer")?.innerText || "")
-  .then(copyToastPopup)
-  .catch(() => alert("Failed to copy passphrase"));
+  navigator.clipboard
+    .writeText(gid("passphraseContainer")?.innerText || "")
+    .then(copyToastPopup)
+    .catch(() => alert("Failed to copy passphrase"));
 });
 
 const copyToastPopup = () => {
@@ -75,13 +78,13 @@ const generatePassphrase = () => {
   const specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
   const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   const separator = changeSeparator ? "-" : " ";
-  
+
   let passphrase = "";
-  
+
   const numPlace = includeNumbers ? secureRandom(numOfWords) : -1;
   const charPlace = includeSpecialChars ? secureRandom(numOfWords) : -1;
   const capitalizeIndex = capitalize ? secureRandom(numOfWords) : -1;
-  
+
   for (let i = 1; i <= numOfWords; i++) {
     let word = words[secureRandom(words.length)];
     if (i === capitalizeIndex) word = word.charAt(0).toUpperCase() + word.slice(1);
@@ -89,7 +92,7 @@ const generatePassphrase = () => {
     if (i === charPlace) word = specialChars[secureRandom(specialChars.length)] + word;
     i === numOfWords ? (passphrase += word) : (passphrase += word + separator);
   }
-  
+
   gid("passphraseContainer")!.innerText = passphrase.trim();
 };
 
